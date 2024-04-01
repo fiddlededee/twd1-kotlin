@@ -3,7 +3,7 @@
 :source-highlighter: rouge
 :rouge-css: style
 :revealjsdir: reveal.js
-:revealjs_customtheme: https://raw.githubusercontent.com/fiddlededee/twd1-kotlin/main/white-course.css
+:revealjs_customtheme: white-course.css
 :revealjs_slideNumber:
 :revealjs_history:
 :revealjs_progress:
