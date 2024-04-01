@@ -1,0 +1,44 @@
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd" title="filling-stations" id="filling-stations-auto" is-library="true">
+	<snippet id="filling-stations-snippet">
+		<p>Dear Boss:</p>
+		<p>Here are the CNG stations that accept Voyager cards:</p>
+		<table>
+			<tr>
+				<td>
+					<p>Station</p>
+				</td>
+				<td>
+					<p>Address</p>
+				</td>
+				<td>
+					<p>Cards Accepted</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>Clean Energy - Yellow Cab</p>
+				</td>
+				<td>
+					<p>540 W Grenshaw</p>
+				</td>
+				<td>
+					<p>A D M V Voyager Wright_Exp CleanEnergy</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>City of Chicago FS#9</p>
+				</td>
+				<td>
+					<p>25 W 65th St</p>
+				</td>
+				<td>
+					<p>A D M V Voyager Wright_Exp CleanEnergy</p>
+				</td>
+			</tr>
+		</table>
+		<p>Your loyal servant</p>
+		<p>John Hancock</p>
+	</snippet>
+</topic>

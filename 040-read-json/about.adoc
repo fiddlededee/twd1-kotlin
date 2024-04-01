@@ -1,0 +1,10 @@
+== Option 1
+
+include::partial.adoc[]
+
+== Option 2
+
+include::attributes.adoc[]
+
+* Project name: {name}
+* Project version: {version}

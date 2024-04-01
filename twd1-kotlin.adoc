@@ -1,0 +1,215 @@
+= Kotlin -- лучший язык для{nbsp}DocOps
+:!imagesdir:
+:source-highlighter: rouge
+:rouge-css: style
+:revealjsdir: reveal.js
+:revealjs_customtheme: white-course.css
+:revealjs_slideNumber:
+:revealjs_history:
+:revealjs_progress:
+:revealjs_mouseWheel: true
+:revealjs_center: false
+:revealjs_transition: none
+:revealjs_width: 1600
+:revealjs_height: 900
+:icons: font
+:figure-caption!:
+:example-caption!:
+:table-caption!:
+
+[.title-footer]
+[cols="260,1100,320"]
+|===
+a|
+[.title-photo]
+image::images/nmp1.jpg[]
+a|
+[.fio]
+Николай Поташников
+
+Руководитель проектов, IT-архитектор +
+КУРС-ИТ
+.2+>.>a|
+{nbsp}
+[.title-hb]
+image::images/tw-1-1v.png[]
+2+a|
+[.contact]
+icon:envelope[] consulting@yandex.ru {nbsp}{nbsp} icon:telegram[] @nmpotashnikov
+|===
+
+[[trebovaniya]]
+== Требования к программному обеспечению
+
+[.indent-before]
+В скобках указана примерная версия, которая будет использоваться для показа.
+
+include::versions.adoc[]
+
+[.indent-before]
+* Операционная система: {os-version}
+* {intellij-version}
+* Java: {java-version}
+* Kotlin: {kotlin-version}
+
+== Почему Kotlin
+
+[%step]
+* Работает как скриптовый язык, позволяет включить зависимости
+* Статически типизированный язык
+* Относится к эко-системе Java
+* Обеспечивает синтаксис, который мы привыкли использовать в шаблонизаторах
+* Поддерживает компиляцию
+
+== Перечень примеров
+
+[%step]
+* Hello world -- вывести строку можно по-разному
+* Preprocess md -- создания препроцессора для ссылки на запросы на изменения (aka Ишуи, Тикеты, Задачи, Эпики)
+* Convert -- конвертируем md в html
+* Read json -- генерируем документацию на основе входных артефактов
+* Postprocess -- проверяем орфографию и много чего другого
+
+== Hello world
+
+[%step]
+* Запуск kts-файла: shebang, правила именования -- `[name].main.kts`
+* DSL-конструкции
+** `apply` -- функция области видимости
+** Вынос ламбды за скобки
+** Функции расширения
+** Перегрузка операторов
+* Последовательность трансформаций
+
+[%step]
+[.indent-before]
+[TIP]
+====
+Что значит, читаемость кода?
+====
+
+== Preprocessor
+
+[%step]
+* `+++__FILE__+++` (работает только при запуске как скрипта)
+* Замена в регулярных выражениях через ламбду
+* Интерполяция в Kotlin
+
+[%step]
+[.indent-before]
+[TIP]
+====
+Препроцессинг -- это норм?
+====
+
+== Конвертация
+
+[%step]
+* Декларативный синтаксис для зависимостей
+* Параметры командной строки
+
+[%step]
+[.indent-before]
+[TIP]
+====
+Паттерн документирования -- issue в JIRA
+====
+
+== Переиспользование внешних артефактов в документации
+
+[%step]
+[.indent-before]
+* Data-классы для десериализации
+* Jackson для работы с JSON-файлами (XML, YAML)
+* Функции работы с массивом для генерации текста
+* `"""` для многострочного текста
+* Infix-функции (DSL-конструкция)
+* Рефакторинг
+
+[%step]
+[.indent-before]
+[TIP]
+====
+Какие артефакты кодирования мы можем использовать в документации
+====
+
+[.no-footer]
+== Генерация документации -- исходный JSON
+
+[source, json]
+----
+include::080-builder/filling-stations.json[]
+----
+
+[.no-footer]
+== Генерация документации -- конструктор (builder)
+
+[source, json]
+----
+include::080-builder/builder.main.kts[tag=snippet]
+----
+
+== Постпроцессинг
+
+* JSoup -- работа с HTML-файлами
+* LanguageTools -- один из лучших способов проверки орфографии
+
+[%step]
+[.indent-before]
+[TIP]
+====
+Что удобно делать на этапе пост-процессинга?
+====
+
+[.in-place-step]
+== Как сделан нижний колонтитул в данной презентации
+
+[%step]
+[source,kotlin,highlight="2"]
+[.focus-lines]
+----
+include::build.main.kts[tag=conversion]
+----
+
+[%step]
+[source,kotlin,highlight="4..5"]
+[.focus-lines]
+----
+include::build.main.kts[tag=conversion]
+----
+
+[%step]
+[source,kotlin,highlight="7..8"]
+[.focus-lines]
+----
+include::build.main.kts[tag=conversion]
+----
+
+== Возможности использования Kotlin в процессах ci/cd
+
+[%step]
+* Как скрипт
+* Как скомпилированный скрипт (отдельный проект https://github.com/kscripting/kscript[kscript])
+* Как обычный Java/Kotlin-проект (gradle/maven)
+* Как gradle-скрипт сборки
+
+== Выводы
+
+[%step]
+.Плюсы
+* Удобен для работы с документацией
+* Обладает широкой экосистемой
+* Отличная поддержка IDE
+* Удобное (с оговорками) управление зависимостями
+
+[%step]
+[.indent-before]
+.Минусы
+* Требовательнее `bash` и даже `Python` для ci/cd
+* Более медленный, если запускать как скрипт
+
+
+
+
+
+

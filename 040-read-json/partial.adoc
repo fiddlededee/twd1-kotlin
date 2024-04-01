@@ -1,0 +1,3 @@
+* Project name: kotlin-twd-1
+* Project version: #1
+Kotlin -- the best language for DocOps (TechWriter Days #1)

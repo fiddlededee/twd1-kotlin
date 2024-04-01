@@ -1,0 +1,4 @@
+:kotlin-version: 1.7.21
+:java-version: 11.0.17
+:os-version: Ubuntu 22.10
+:intellij-version: IntelliJ IDEA 2023.3.6 (Ultimate Edition)
