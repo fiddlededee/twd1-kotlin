@@ -52,6 +52,9 @@ include::versions.adoc[]
 * Java: {java-version}
 * Kotlin: {kotlin-version}
 
+[WARNING]
+Примеры для мастер-класса: https://github.com/fiddlededee/twd1-kotlin
+
 == Почему Kotlin
 
 [%step]
