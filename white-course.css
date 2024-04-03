@@ -417,7 +417,9 @@ table.frame-all {
 }
 
 .reveal h[level="4"] {
-    font-weight: bold;
+    font-weight: normal;
+    font-size: 1.8em;
+    text-transform: capitalize !important;
 }
 
 .reveal .tablesmallfont * {
@@ -439,9 +441,9 @@ table.frame-all {
      border-bottom: 1px solid black;*/
 }
 
-.reveal table.tableblock.tablenoborder {
-    border-top: none;
-    border-bottom: none;
+.reveal table.tableblock.no-border {
+    border-top: none !important;
+    border-bottom: none !important;
 }
 
 th.valign-middle, td.valign-middle {
@@ -590,7 +592,7 @@ body {
 
 
 .reveal .imageblock {
-    margin: 2em 0px;
+    margin: 1em 0px;
 }
 
 .reveal .preamble {
@@ -947,3 +949,8 @@ section {
 .in-place-step .fragment.current-fragment {
     display: block;
 }
+
+.imageblock.with-title {
+    margin-bottom: 0px;
+}
+

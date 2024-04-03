@@ -167,8 +167,9 @@ include::080-builder/builder.main.kts[tag=snippet]
 
 == Постпроцессинг
 
+[%step]
 * JSoup -- работа с файлами `HTML`
-* LanguageTools -- один из лучших способов проверки орфографии
+* LanguageTools -- одна из лучших библиотек для проверки орфографии
 
 [%step]
 [.indent-before]
@@ -201,28 +202,47 @@ include::build.main.kts[tag=conversion]
 include::build.main.kts[tag=conversion]
 ----
 
-== Возможности использования Kotlin в процессах ci/cd
+== Возможности использования Kotlin в процессах CI/CD
 
 [%step]
 * Как скрипт
 * Как скомпилированный скрипт (отдельный проект https://github.com/kscripting/kscript[kscript])
-* Как обычный Java/Kotlin-проект (gradle/maven)
-* Как gradle-скрипт сборки
+* Как обычный Java/Kotlin-(под)проект (Gradle/Maven)
+* Как часть Gradle-скрипта сборки
 
 == Выводы
 
+[.no-border]
+[cols="5,^1"]
+|===
+a|
 [%step]
 .Плюсы
 * Удобен для работы с документацией
 * Обладает широкой экосистемой
-* Отличная поддержка IDE
-* Удобное (с оговорками) управление зависимостями
+* Отлично поддерживается IDE
+* Позволяет удобно (с оговорками) использовать внешние библиотеки
 
 [%step]
 [.indent-before]
 .Минусы
-* Требовательнее `bash` и даже `Python` для ci/cd
+* Требовательнее `bash` и даже `Python` для CI/CD
 * Более медленный, если запускать как скрипт
+a|
+[%step]
+--
+[discrete]
+==== Вопросы?
+
+[.with-title]
+.https://t.me/nmpotashnikoff[@nmpotashnikoff]
+image::images/telegram-url.png[]
+
+[.with-title]
+.https://t.me/twdays_channel/19[@twdays_channel]
+image::images/discussion-url.jpg[]
+--
+|===
 
 
 
