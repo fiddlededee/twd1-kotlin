@@ -40,7 +40,7 @@ val projectVersion = packageJson.version
 """
     * Project name: $projectName
     * Project version: $projectVersion
-    ${packageJson.description ?: ""}
+    ${if(packageJson.description != null) "* ${packageJson.description}" else ""}
 """.trimIndent()
     .toFile("$scriptDir/partial.adoc")
 
