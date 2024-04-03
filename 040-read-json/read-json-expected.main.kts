@@ -44,6 +44,8 @@ val projectVersion = packageJson.version
 """.trimIndent()
     .toFile("$scriptDir/partial.adoc")
 
+// start
+
 arrayOf(
     packageJson::name.name to projectName,
     packageJson::version.name to projectVersion

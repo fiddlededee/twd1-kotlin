@@ -27,6 +27,8 @@ fun String.md2html() : String {
 
 val scriptDir: String = __FILE__.parent
 
+// start
+
 object Options : NoOpCliktCommand() {
     val fileToProcess by option("-i", help = "File to process").required()
 }

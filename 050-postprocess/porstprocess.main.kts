@@ -30,13 +30,13 @@ object LangTools {
     var ruleExceptions: Set<String> = setOf("")
 
     fun setSpellTokens(
-        ignoreTokens: ArrayList<String>,
-        acceptPhrases: ArrayList<String> = arrayListOf()
+        ignore: Array<String>,
+        accept: Array<String> = arrayOf()
     ): LangTools {
         langTool.allActiveRules.forEach { rule ->
             if (rule is SpellingCheckRule) {
-                rule.addIgnoreTokens(ignoreTokens)
-                rule.acceptPhrases(acceptPhrases)
+                rule.addIgnoreTokens(ignore.toList())
+                rule.acceptPhrases(accept.toList())
             }
         }
         return this
@@ -60,4 +60,6 @@ object LangTools {
 }
 
 val scriptDir: String = __FILE__.parent
+
+// start
 

@@ -41,27 +41,32 @@ icon:envelope[] consulting@yandex.ru {nbsp}{nbsp} icon:telegram[] @nmpotashnikov
 [[trebovaniya]]
 == Требования к программному обеспечению
 
-[.indent-before]
-В скобках указана примерная версия, которая будет использоваться для показа.
-
 include::versions.adoc[]
 
-[.indent-before]
 * Операционная система: {os-version}
 * {intellij-version}
 * Java: {java-version}
 * Kotlin: {kotlin-version}
 
-[WARNING]
-Примеры для мастер-класса:
-https://github.com/fiddlededee/twd1-kotlin
+(указаны версии, которые будут использоваться для показа)
+
+[TIP]
+[.indent-before]
+====
+* https://storage.yandexcloud.net/fiddle-de-dee-public/twd-1/tw1.ova[Виртуальная машина] (пароль пользователя -- «1»)
++
+Короткая ссылка: https://clck.ru/39qbaD
+* https://github.com/fiddlededee/twd1-kotlin[Примеры]
++
+Короткая ссылка: https://clck.ru/39qbra
+====
 
 == Почему Kotlin
 
 [%step]
 * Работает как скриптовый язык, позволяет включить зависимости
 * Статически типизированный язык
-* Относится к эко-системе Java
+* Относится к экосистеме Java
 * Обеспечивает синтаксис, который мы привыкли использовать в шаблонизаторах
 * Поддерживает компиляцию
 
@@ -89,7 +94,7 @@ https://github.com/fiddlededee/twd1-kotlin
 [.indent-before]
 [TIP]
 ====
-Что значит, читаемость кода?
+Важна ли читаемость кода в DocOps?
 ====
 
 == Preprocessor
@@ -103,7 +108,7 @@ https://github.com/fiddlededee/twd1-kotlin
 [.indent-before]
 [TIP]
 ====
-Препроцессинг -- это норм?
+Препроцессинг -- норм?
 ====
 
 == Конвертация
@@ -116,7 +121,7 @@ https://github.com/fiddlededee/twd1-kotlin
 [.indent-before]
 [TIP]
 ====
-Паттерн документирования -- issue в JIRA
+Паттерн документирования «Issue в JIRA» -- норм?
 ====
 
 == Переиспользование внешних артефактов в документации
@@ -134,8 +139,15 @@ https://github.com/fiddlededee/twd1-kotlin
 [.indent-before]
 [TIP]
 ====
-Какие артефакты кодирования мы можем использовать в документации
+Какие артефакты кодирования мы можем использовать в документации?
 ====
+
+== Определение текущих версий для мастер-класса
+
+[source, kotlin]
+----
+include::build.main.kts[tag=versions]
+----
 
 [.no-footer]
 == Генерация документации -- исходный JSON
@@ -155,14 +167,14 @@ include::080-builder/builder.main.kts[tag=snippet]
 
 == Постпроцессинг
 
-* JSoup -- работа с HTML-файлами
+* JSoup -- работа с файлами `HTML`
 * LanguageTools -- один из лучших способов проверки орфографии
 
 [%step]
 [.indent-before]
 [TIP]
 ====
-Что удобно делать на этапе пост-процессинга?
+Что удобно делать на этапе постпроцессинга?
 ====
 
 [.in-place-step]

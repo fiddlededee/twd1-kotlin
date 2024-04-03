@@ -6,6 +6,8 @@ var myName = "Nick"
 
 println("Hello world".replace("world", myName))
 
+// start
+
 // Печать как часть процесса трансформации строки
 // с помощью функции области видимости `apply`
 "Hello world 2"

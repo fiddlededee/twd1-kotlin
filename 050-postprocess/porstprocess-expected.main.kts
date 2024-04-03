@@ -3,7 +3,6 @@
 @file:DependsOn("com.google.guava:guava:21.0")
 @file:DependsOn("org.languagetool:language-ru:5.6")
 
-
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.languagetool.JLanguageTool
@@ -31,13 +30,13 @@ object LangTools {
     var ruleExceptions: Set<String> = setOf("")
 
     fun setSpellTokens(
-        ignoreTokens: ArrayList<String>,
-        acceptPhrases: ArrayList<String> = arrayListOf()
+        ignore: Array<String>,
+        accept: Array<String> = arrayOf()
     ): LangTools {
         langTool.allActiveRules.forEach { rule ->
             if (rule is SpellingCheckRule) {
-                rule.addIgnoreTokens(ignoreTokens)
-                rule.acceptPhrases(acceptPhrases)
+                rule.addIgnoreTokens(ignore.toList())
+                rule.acceptPhrases(accept.toList())
             }
         }
         return this
@@ -62,13 +61,14 @@ object LangTools {
 
 val scriptDir: String = __FILE__.parent
 
+// start
+
 File("$scriptDir/text.html")
     .readText()
     .jsoupParse()
     .selectXpath("//p")
     .forEach { paragraph ->
         LangTools
-            .setSpellTokens(arrayListOf("десериализация"))
+            .setSpellTokens(ignore = arrayOf("десериализация"))
             .check(paragraph.text())
     }
-

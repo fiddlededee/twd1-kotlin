@@ -20,6 +20,8 @@ fun String.toFile(fileName: String): String {
     return this
 }
 
+val scriptDir: String = __FILE__.parent
+
 val json = File("filling-stations.json").readText()
 
 data class Station(
@@ -68,7 +70,8 @@ val letterAst = xml("topic") {
 }
 letterAst.toString(PrintOptions(singleLineTextElements = true))
     .println()
-    .toFile("080-builder/writerside/Writerside/topics/filling-stations-auto.topic")
+    .toFile("$scriptDir/writerside/Writerside/topics/filling-stations-auto.topic")
+
 
 "Script successfully finished"
 

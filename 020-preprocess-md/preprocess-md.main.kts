@@ -16,3 +16,10 @@ val scriptDir = __FILE__.parent
 val mdText = File("$scriptDir/preprocess-md-source.md").readText()
 
 val regEx = """\{\{[ ]*github-issue[ ]*\[[ ]*(.*)[ ]*][ ]*}}""".toRegex()
+
+mdText
+    .replace(regEx, "<a href='https://github.com/$1'>$1</a>")
+    .println()
+
+// start
+
