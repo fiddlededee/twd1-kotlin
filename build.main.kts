@@ -117,6 +117,26 @@ object LangTools {
     }
 }
 
+fun String.langToolsCheck() {
+    LangTools
+        .apply {
+            setSpellTokens(
+                ignore = arrayOf(
+                    "Ишуи",
+                    "шаблонизаторах",
+                    "препроцессинг",
+                    "десериализации",
+                    "постпроцессинга",
+                )
+            )
+            ruleExceptions = setOf(
+                "UPPERCASE_SENTENCE_START",
+                "RU_UNPAIRED_BRACKETS"
+            )
+        }
+        .check(this)
+}
+
 //tag::conversion[]
 File("twd1-kotlin.adoc")
     .run { AsciidocHtmlFactory.getHtmlFromFile(this) }
@@ -127,25 +147,7 @@ File("twd1-kotlin.adoc")
             select("section:not(.title):not(.no-footer)")
                 .forEach { it.append(footerHtml(title)) }
         }.apply {
-            this.selectXpath("//p").forEach {
-                LangTools
-                    .apply {
-                        setSpellTokens(
-                            ignore = arrayOf(
-                                "Ишуи",
-                                "шаблонизаторах",
-                                "препроцессинг",
-                                "десериализации",
-                                "постпроцессинга",
-                            )
-                        )
-                        ruleExceptions = setOf(
-                            "UPPERCASE_SENTENCE_START",
-                            "RU_UNPAIRED_BRACKETS"
-                        )
-                    }
-                    .check(it.text())
-            }
+            this.selectXpath("//p").forEach { it.text().langToolsCheck() }
         }
             .toString()
     }.toFile("twd1-kotlin.html")
