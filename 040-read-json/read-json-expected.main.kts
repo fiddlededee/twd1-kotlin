@@ -37,19 +37,29 @@ val projectName = packageJson.name
 val projectVersion = packageJson.version
     ?: throw Exception("Project version required")
 
+// Интерполяция и интерполяция внутри интерполяции
 """
     * Project name: $projectName
     * Project version: $projectVersion
-    ${if(packageJson.description != null) "* ${packageJson.description}" else ""}
+    ${if (packageJson.description != null) "* ${packageJson.description}" else ""}
 """.trimIndent()
     .toFile("$scriptDir/partial.adoc")
 
 // start
 
+// Задание массива пар, первое значение в которых
+// определяет наименование атрибута, а второе --
+// значение атрибута
 arrayOf(
     packageJson::name.name to projectName,
-    packageJson::version.name to projectVersion
+    packageJson::version.name to projectVersion,
+    packageJson::description.name to packageJson.description
 )
+    // Отбор пар, в которых второй параметр (значение) не является пустым
+    .filter { it.second != null }
+    // Преобразование пар в синтаксис Asciidoc
+    // :attribute-name: attribute value
+    // В реальных задачах значение (value) необходимо экранировать
     .joinToString("\n") { ":${it.first}: ${it.second}" }
     .toFile("$scriptDir/attributes.adoc")
 

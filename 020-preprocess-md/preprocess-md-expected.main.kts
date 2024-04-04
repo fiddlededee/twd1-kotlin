@@ -24,6 +24,7 @@ mdText
 // start
 
 mdText
+    // Замена с использованием регулярного выражения и лямбды
     .replace(regEx) {
         val issueRef = it.groupValues[1]
         "<a href='https://github.com/$issueRef'>${issueRef.uppercase()}</a>"

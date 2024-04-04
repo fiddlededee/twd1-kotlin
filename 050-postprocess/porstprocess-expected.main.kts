@@ -65,9 +65,12 @@ val scriptDir: String = __FILE__.parent
 
 File("$scriptDir/text.html")
     .readText()
+    // Парсинг файла HTML
     .jsoupParse()
+    // Выбор всех абзацев
     .selectXpath("//p")
     .forEach { paragraph ->
+        // Проверка текста каждого абзаца
         LangTools
             .setSpellTokens(ignore = arrayOf("десериализация"))
             .check(paragraph.text())

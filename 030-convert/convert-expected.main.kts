@@ -29,6 +29,7 @@ val scriptDir: String = __FILE__.parent
 
 // start
 
+// Считывание параметров командной строки
 object Options : NoOpCliktCommand() {
     val fileToProcess by option("-i", help = "File to process").required()
 }
@@ -36,6 +37,7 @@ Options.main(args)
 
 File(Options.fileToProcess)
     .readText()
+    // Непосредственно конвертация
     .md2html()
     .toFile("$scriptDir/converted.html")
 

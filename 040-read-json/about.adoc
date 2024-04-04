@@ -8,3 +8,6 @@ include::attributes.adoc[]
 
 * Project name: {name}
 * Project version: {version}
+ifdef::description[]
+* {description}
+endif::[]
