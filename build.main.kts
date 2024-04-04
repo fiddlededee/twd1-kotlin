@@ -46,16 +46,16 @@ fun String.runCommand(): String {
         .run { String(inputStream.readAllBytes()) }
 }
 
+//tag::verclirule[]
 data class VerCliRule(val param: String, val cli: String, val regEx: Regex) {
     fun value(): String {
-        return cli.runCommand()
-            .split("\n")
+        return cli.runCommand().split("\n")
             .filter { it.contains(regEx) }
             .run { getOrNull(0) ?: throw Exception("Can't define $param") }
-            .run { regEx.matchEntire(this)!!.groupValues[1] }
-            .trim()
+            .run { regEx.matchEntire(this)!!.groupValues[1] }.trim()
     }
 }
+//end::verclirule[]
 
 //tag::versions[]
 arrayOf(
@@ -67,8 +67,7 @@ arrayOf(
     ).map { it.param to it.value() }.toTypedArray()
 )
     .joinToString("\n") { ":${it.first}: ${it.second}" }
-    .toFile("versions.adoc")
-    .println()
+    .toFile("versions.adoc").println()
 //end::versions[]
 
 fun footerHtml(title: String): String {

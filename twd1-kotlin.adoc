@@ -124,30 +124,45 @@ include::versions.adoc[]
 Паттерн документирования «Issue в JIRA» -- норм?
 ====
 
-== Переиспользование внешних артефактов в документации
-
-[%step]
-[.indent-before]
-* Data-классы для десериализации
-* Jackson для работы с JSON-файлами (XML, YAML)
-* Функции работы с массивом для генерации текста
-* `"""` для многострочного текста
-* Infix-функции (DSL-конструкция)
-* Рефакторинг
-
-[%step]
-[.indent-before]
-[TIP]
-====
-Какие артефакты кодирования мы можем использовать в документации?
-====
-
+[.no-footer]
 == Определение текущих версий для мастер-класса
 
 [source, kotlin]
 ----
 include::build.main.kts[tag=versions]
 ----
+
+[.no-footer]
+== Определение текущих версий для мастер-класса
+
+[.focus-lines]
+[source, kotlin, highlight="4..7"]
+----
+include::build.main.kts[tag=versions]
+----
+
+[.indent-before]
+[source, kotlin, highlight="4..6"]
+----
+include::build.main.kts[tag=verclirule]
+----
+
+[.no-footer]
+== Определение текущих версий для мастер-класса
+
+[.focus-lines]
+[source, kotlin, highlight="4..7"]
+----
+include::build.main.kts[tag=versions]
+----
+
+[.focus-lines]
+[.indent-before]
+[source, kotlin, highlight="4..6"]
+----
+include::build.main.kts[tag=verclirule]
+----
+
 
 [.no-footer]
 == Генерация документации -- исходный JSON
@@ -165,17 +180,31 @@ include::080-builder/filling-stations.json[]
 include::080-builder/builder.main.kts[tag=snippet]
 ----
 
-== Постпроцессинг
+
+[.no-footer]
+== Генерация документации -- конструктор (builder)
+
+image::images/reuse.png[width=100%]
+
+
+== Переиспользование внешних артефактов в документации
 
 [%step]
-* JSoup -- работа с файлами `HTML`
-* LanguageTools -- одна из лучших библиотек для проверки орфографии
+[.indent-before]
+* Data-классы для десериализации
+* Jackson для работы с JSON-файлами (XML, YAML)
+* Функции работы с массивом для генерации текста
+* `"""` для многострочного текста
+* Infix-функции (DSL-конструкция)
+* Null безопасность
+* Рефакторинг
+
 
 [%step]
 [.indent-before]
 [TIP]
 ====
-Что удобно делать на этапе постпроцессинга?
+Какие артефакты кодирования мы можем использовать в документации?
 ====
 
 [.in-place-step]
@@ -201,6 +230,20 @@ include::build.main.kts[tag=conversion]
 ----
 include::build.main.kts[tag=conversion]
 ----
+
+
+== Постпроцессинг
+
+[%step]
+* JSoup -- работа с файлами `HTML`
+* LanguageTools -- одна из лучших библиотек для проверки орфографии
+
+[%step]
+[.indent-before]
+[TIP]
+====
+Что удобно делать на этапе постпроцессинга?
+====
 
 == Возможности использования Kotlin в процессах CI/CD
 

@@ -21,16 +21,13 @@ fun String.println(): String {
     return this
 }
 
-"Hello world 3"
-    .replace("world", myName)
-    .println()
+"Hello world 3".println()
 
 // Переопределение унарного оператора `+`
 operator fun String.unaryPlus() = println(this)
 
-+"Hello world 5"
++"Hello world 4"
 
 // Возврат результата в Kotlin Script Engine
-"Hello world 4"
-    .replace("world", myName)
+"Hello world 5"
 
