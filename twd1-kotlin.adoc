@@ -35,7 +35,7 @@ a|
 image::images/tw-1-1v.png[]
 2+a|
 [.contact]
-icon:envelope[] consulting@yandex.ru {nbsp}{nbsp} icon:telegram[] @nmpotashnikov
+icon:envelope[] consulting@yandex.ru {nbsp}{nbsp} icon:telegram[] @nmpotashnikoff
 |===
 
 [[trebovaniya]]
